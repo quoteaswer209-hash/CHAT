@@ -1,11 +1,11 @@
 name: Build NOVA CHAT APK
 
-on:
+"on":
 workflow_dispatch:
 push:
 paths:
-- "NOVA_CHAT_COMPLETE_SOURCE.zip"
-- ".github/workflows/build.yml"
+- NOVA_CHAT_COMPLETE_SOURCE.zip
+- .github/workflows/build.yml
 
 jobs:
 build:
@@ -30,7 +30,6 @@ steps:
     run: |
       mkdir -p app
       unzip -o NOVA_CHAT_COMPLETE_SOURCE.zip -d app
-      ls -la app
 
   - name: Locate package.json
     run: |
